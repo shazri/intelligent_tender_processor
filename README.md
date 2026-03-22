@@ -1,3 +1,27 @@
+## Installation
+
+conda version 24.11.3
+
+1. conda create -n working_folder python=3.11
+2. conda activate working_folder
+3. pip install -r requirements.txt
+4. python text_and_image_preprocessing.py
+ - sub-run ### text_ingest.py , ### image_read.py , ### image_ingest.py
+ - generate folder <images_rep> and its contents
+ - generate vector_db_all.pkl
+5. Place glove.6B.50d.txt from
+https://drive.google.com/drive/folders/1b1mUxkawvycyXfwh7ze3DAEyEBZ2AIkD?usp=drive_link
+to <working_folder>\\vectorlib\\glove\\
+
+
+
+
+
+## Runtime
+
+
+## Codes
+
 ### text_and_image_preprocessing.py
 
 It automates a step-by-step preprocessing pipeline for text and images ingestion into a vector database with failure control.
