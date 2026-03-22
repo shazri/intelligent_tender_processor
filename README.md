@@ -201,7 +201,7 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
 
 - Embedding Utilities
   - Loads embeddings from `embedding_path` into a dictionary:
-    - `word` → vector (`numpy` array)
+    - `word` to vector (`numpy` array)
   - Determines embedding dimension (`len_vec`) automatically
 
 - Vector Database Interaction
@@ -219,3 +219,37 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
   - `search(query_vector, k=5)`
     - Returns top `k` most similar items from the vector database
     - Sorts by cosine similarity descending
+   
+  ### collate_and_summarize.py
+
+  - Collate and Summarize Library
+  - Provides functions to parse and summarize LLM-generated requirement text
+  - Converts raw requirement strings into structured Pandas DataFrames
+
+- Parser: `parse_requirements_to_df(text)`
+  - Cleans LLM-generated fluff such as:
+    - "Here is the extracted …"
+    - "Here's the extracted …"
+    - "Here are the extracted …"
+  - Extracts structured fields for each requirement:
+    - requirement
+    - excerpt
+    - category
+    - file
+    - page
+    - type
+    - image
+    - classification
+    - compliance
+  - Combines multiple excerpts into one
+  - Fills empty `requirement` fields from `excerpt` with tracking
+
+- Summarizer: `summarize_df(c_df)`
+  - Aggregates the DataFrame by:
+    - category
+    - classification
+    - compliance
+  - Produces a side-by-side summary per file
+  - Cleans up duplicated file names
+  - Replaces missing values with empty strings
+  - Returns a final, clean summary table
