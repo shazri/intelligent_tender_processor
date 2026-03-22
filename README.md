@@ -18,9 +18,23 @@ to <working_folder>\\vectorlib\\glove\\
 
 
 
-
-
 ## Runtime
+1. run command `streamlit run tender_app.py`
+
+## Discussion
+
+### The intent junction uses ML e.g. Logistic Regression, not LLM
+- Intent Classification
+  - Classifies user queries into three categories:
+    - REQUIREMENTS → extraction of tender requirements
+    - BOQ → Bill of Quantities processing
+    - GENERAL → general tender-related queries
+
+- Why use ML (Logistic Regression)
+  - Deterministic and avoids hallucination
+    - Logistic Regression makes decisions based on learned statistical patterns, not generative reasoning
+    - Ensures consistent outputs and avoids hallucination, making intent classification reliable for downstream processing
+
 
 
 ## Codes
