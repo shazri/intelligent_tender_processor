@@ -219,12 +219,12 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
   - `search(query_vector, k=5)`
     - Returns top `k` most similar items from the vector database
     - Sorts by cosine similarity descending
-   
-  ### collate_and_summarize.py
 
-  - Collate and Summarize Library
-  - Provides functions to parse and summarize LLM-generated requirement text
-  - Converts raw requirement strings into structured Pandas DataFrames
+### collate_and_summarize.py
+
+- Collate and Summarize Library
+- Provides functions to parse and summarize LLM-generated requirement text
+- Converts raw requirement strings into structured Pandas DataFrames
 
 - Parser: `parse_requirements_to_df(text)`
   - Cleans LLM-generated fluff such as:
