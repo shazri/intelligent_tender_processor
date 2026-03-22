@@ -29,9 +29,9 @@ to <working_folder>\\vectorlib\\glove\\
 ### The intent junction uses ML e.g. Logistic Regression, not LLM
 - Intent Classification
   - Classifies user queries into three categories:
-    - REQUIREMENTS → extraction of tender requirements
-    - BOQ → Bill of Quantities processing
-    - GENERAL → general tender-related queries
+    - REQUIREMENTS , extraction of tender requirements
+    - BOQ , Bill of Quantities processing
+    - GENERAL , general tender-related queries
 
 - Why use ML (Logistic Regression)
   - Deterministic and avoids hallucination
