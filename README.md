@@ -102,7 +102,15 @@ Columns:
     - Logistic Regression makes decisions based on learned statistical patterns, not generative reasoning
     - Ensures consistent outputs and avoids hallucination, making intent classification reliable for downstream processing
 
+### Why Use SentenceTransformer Alongside Ollama for Requirement Extraction
 
+While Ollama is powerful at identifying and inferring tender requirements from documents, it can sometimes hallucinate or include extra context that isn’t part of the exact requirement.  
+
+To address this, we use **SentenceTransformer** to encode both the LLM output and the source text into embeddings. By computing similarity between these vectors, we can extract the **exact portion of the text** that matches the requirement.  
+
+This hybrid approach ensures:
+- Ollama provides semantic understanding and identifies candidate requirements.
+- SentenceTransformer precisely maps the LLM output to the source document, reducing hallucination and improving fidelity.
 
 ## Codes
 
