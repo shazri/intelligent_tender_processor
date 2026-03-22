@@ -127,4 +127,44 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
     - `description`
 - Saves output
   - Writes to JSON file
-  - Formatted with `indent`
+
+
+### image_ingest.py
+
+- Load Configuration
+  - Reads paths from `config.json`:
+    - `embedding_path` → word embeddings file
+    - `docs_path` → folder containing PDFs
+    - `vector_pickle_all` → saved vector database
+    - `image_analysis` → JSON file with image analysis results
+  - Prints configuration paths
+
+- Load Image Records
+  - Reads `image_analysis` JSON
+  - Prints total number of records and sample record
+
+- Create Embedding Index
+  - Reads embeddings file line by line
+  - Creates dictionary:
+    - `word` → vector (`numpy` array)
+  - Used for vectorization of text/image descriptions
+
+- Load Existing Vector Database
+  - Loads vector DB from pickle file
+  - Creates a set of unique keys:
+    - `(file, page, text, type)`
+  - Prevents adding duplicates
+
+- Determine Embedding Dimension
+  - Gets vector length from embedding index
+
+- Add Image Records to Vector DB
+  - Calls `add_to_vector_db()` with:
+    - Records: `image_records`
+    - Fields: `description`, `pdf`, `page`, `image`, type=`image`
+    - Existing keys to avoid duplicates
+    - Embedding index and vector length
+
+- Save Updated Vector Database
+  - Saves updated DB back to pickle file
+  - Prints total number of vectors
