@@ -39,7 +39,7 @@ Columns:
 - category           : type of requirement (DOCUMENTATION, QUALITY_STANDARDS, TECHNICAL_SPECS, TIMELINES)
 - file               : PDF filename containing the requirement
 - page               : page number in the PDF
-- type               : text or image
+- type               : text
 - image              : image path if type is image, else None
 - classification     : MANDATORY or OPTIONAL
 - compliance         : YES, NO or UNKNOWN
@@ -56,10 +56,11 @@ Columns:
 - category          : type of requirement (DOCUMENTATION, QUALITY_STANDARDS, TECHNICAL_SPECS, TIMELINES)
 - pdf               : PDF filename containing the image
 - page              : page number in the PDF
-- type              : always IMAGE
+- type              : IMAGE
 - image             : path or identifier for the extracted image
 - classification    : MANDATORY or OPTIONAL
-- compliance        : YES, NO, PARTIAL, or UNKNOWN
+- compliance        : YES, NO or UNKNOWN
+![Diagram](readme_img/req_image.png)
 
 ## Discussion
 
