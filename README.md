@@ -301,3 +301,54 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
     - Unit
     - Quantity
     - Notes
+
+### vector_db_lib.py
+
+- Vector DB Library
+  - Provides utilities to store, load, and update a vector-based database
+  - Supports text and image records with embedding vectors
+
+- Save and Load
+  - `save_vector_db(vector_db, DB_PATH)`
+    - Saves vector database to disk using `pickle`
+  - `load_vector_db(DB_PATH)`
+    - Loads existing vector database from file
+    - If file does not exist:
+      - Creates and returns an empty database
+    - Handles corrupted or invalid files:
+      - Resets database safely to empty list
+
+- Add Records with Embeddings
+  - `add_to_vector_db(...)`
+    - Adds new records into vector database with embedding generation
+    - Avoids duplicates using unique key:
+      - `(file, page, text, type)`
+
+- Text Processing
+  - Cleans text using regex:
+    - Keeps only letters `a–z` and numbers `0–9`
+  - Tokenizes text into words
+  - Removes stopwords using `nltk`
+  - Skips empty or missing text
+
+- Embedding Generation
+  - Uses preloaded embedding index:
+    - `word → vector`
+  - Generates vector by averaging token embeddings
+  - Handles variable input schemas via configurable field names
+
+- Record Structure
+  - Each stored record contains:
+    - `vector` → embedding vector
+    - `text` → original text
+    - `file` → source file
+    - `page` → page number
+    - `type` → "text" or "image"
+    - `image` → image path (if applicable)
+
+- Duplicate Prevention
+  - Uses `existing_keys` set to track processed entries
+  - Ensures only new records are added
+
+- Output
+  - Returns updated vector database with newly added records
