@@ -34,7 +34,7 @@ Runtime video: https://drive.google.com/file/d/14zRleh_R14k8htLZlC2i1o3r0rObe-Rl
 - Ensures exact phrases are captured for compliance and analysis
 
 Columns:
-- requirement        : main obligation contractor must fulfill
+- requirement        : main obligation contractor must fulfill, detected from pdf documents
 - excerpt            : exact supporting text from source
 - category           : type of requirement (DOCUMENTATION, QUALITY_STANDARDS, TECHNICAL_SPECS, TIMELINES)
 - file               : PDF filename containing the requirement
@@ -45,6 +45,21 @@ Columns:
 - compliance         : YES, NO or UNKNOWN
 ![Diagram](readme_img/req_text.png)
 
+### Tender Requirement List (Image-Based Portion)
+- Structured list of tender obligations extracted from images in PDF files
+- Captures requirements that are present in diagrams, tables, or scanned images
+- Stores exact phrases, page info, and image references for compliance and analysis
+
+Columns:
+- description       : main obligation or text extracted from image, the source that the requirement derived from are from first: `llama3.2-vision`  and fallback: `qwen2.5vl:7b`
+- excerpt           : exact supporting text from the source image
+- category          : type of requirement (DOCUMENTATION, QUALITY_STANDARDS, TECHNICAL_SPECS, TIMELINES)
+- pdf               : PDF filename containing the image
+- page              : page number in the PDF
+- type              : always IMAGE
+- image             : path or identifier for the extracted image
+- classification    : MANDATORY or OPTIONAL
+- compliance        : YES, NO, PARTIAL, or UNKNOWN
 
 ## Discussion
 
