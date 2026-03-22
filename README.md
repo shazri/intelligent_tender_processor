@@ -168,3 +168,54 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
 - Save Updated Vector Database
   - Saves updated DB back to pickle file
   - Prints total number of vectors
+ 
+
+### llm_tools.py
+
+- LLM Tools Library
+  - Provides reusable functions for embedding, vector search, and querying LLMs (Ollama)
+  - Supports requirement extraction from tender documents
+
+- Configuration
+  - Loads paths from `config.json`:
+    - `embedding_path` → word embeddings file
+    - `docs_path` → folder containing PDFs
+    - `vector_pickle_all` → saved vector database file
+
+- LLM Interaction
+  - `ask_ollama(prompt)`
+    - Sends a POST request to Ollama API (`llama3`) at `localhost:11434`
+    - Options:
+      - `temperature`: 0
+      - `top_p`: 1
+      - `top_k`: 1
+    - Returns LLM response as JSON
+
+  - `ask_requirements(context)`
+    - Wraps context into a strict prompt for requirement extraction
+    - Rules enforced:
+      - No summarization
+      - Copy file and page metadata exactly
+      - Only allowed categories, classification, compliance
+      - Returns formatted requirement output
+
+- Embedding Utilities
+  - Loads embeddings from `embedding_path` into a dictionary:
+    - `word` → vector (`numpy` array)
+  - Determines embedding dimension (`len_vec`) automatically
+
+- Vector Database Interaction
+  - Loads vector database from pickle file (`vector_db_lib.load_vector_db`)
+
+- Vector Search
+  - `vectorize(text)`
+    - Converts input text into vector representation
+    - Uses preloaded embedding index
+    - Averages word vectors for multi-token text
+
+  - `cosine(a, b)`
+    - Computes cosine similarity between two vectors
+
+  - `search(query_vector, k=5)`
+    - Returns top `k` most similar items from the vector database
+    - Sorts by cosine similarity descending
