@@ -90,7 +90,7 @@ Columns:
 
 ## Discussion
 
-### The intent junction uses ML e.g. Logistic Regression, not LLM
+### 1) The intent junction uses ML e.g. Logistic Regression, not LLM
 - Intent Classification
   - Classifies user queries into three categories:
     - REQUIREMENTS , extraction of tender requirements
@@ -102,7 +102,7 @@ Columns:
     - Logistic Regression makes decisions based on learned statistical patterns, not generative reasoning
     - Ensures consistent outputs and avoids hallucination, making intent classification reliable for downstream processing
 
-### Why Use SentenceTransformer Alongside Ollama for Requirement Extraction
+### 2) Why Use SentenceTransformer Alongside Ollama for Requirement Extraction
 
 While Ollama is powerful at identifying and inferring tender requirements from documents, it can sometimes hallucinate or include extra context that isn’t part of the exact requirement.  
 
