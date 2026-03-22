@@ -1,7 +1,12 @@
 ## Installation
 
-conda version 24.11.3
+### Pre-installation
+1. conda version 24.11.3
+2. run command `ollama pull llama3.2-vision`
+3. run command `ollama pull qwen2.5vl:7b`
+4. run command `ollama pull llama3`
 
+### Main Installation Portion
 1. run command `conda create -n working_folder python=3.11`
 2. run command `conda activate working_folder`
 3. run command `pip install -r requirements.txt`
