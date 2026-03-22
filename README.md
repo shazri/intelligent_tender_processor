@@ -21,6 +21,9 @@ to <working_folder>\\vectorlib\\glove\\
 ## Runtime
 1. run command `streamlit run tender_app.py`
 
+![Diagram](readme_img/req_text.png)
+
+
 ## Discussion
 
 ### The intent junction uses ML e.g. Logistic Regression, not LLM
