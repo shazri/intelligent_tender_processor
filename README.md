@@ -23,7 +23,7 @@ to <working_folder>\\vectorlib\\glove\\
 
 Runtime video: https://drive.google.com/file/d/14zRleh_R14k8htLZlC2i1o3r0rObe-Rl/view?usp=drive_link
 
-Tender Requirement List (Text-Based Portion)
+### Tender Requirement List (Text-Based Portion)
 - in video at minute 11:11
 - Structured list of tender obligations extracted from PDF sources
 - Ensures exact phrases are captured for compliance and analysis
