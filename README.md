@@ -253,3 +253,51 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
   - Cleans up duplicated file names
   - Replaces missing values with empty strings
   - Returns a final, clean summary table
+ 
+  ### table_process.py
+
+  - Table Process Library
+  - Provides functions to extract, clean, and process tables from engineering tender PDFs
+  - Converts raw tables into structured Pandas DataFrames for BoQ analysis
+
+- `apply_left_fill_rule(df)`
+  - For each column in a DataFrame:
+    - If column name is not empty
+    - And all values are empty
+    - Fills column with values from the immediate left column
+
+- `extract_boq(text)`
+  - Sends a text snippet to Ollama LLM
+  - Extracts explicit Bill of Quantities (BoQ) items
+  - Rules:
+    - Only explicit items with quantities
+    - Return JSON array with fields:
+      - Description
+      - Unit (normalized)
+      - Quantity (numeric)
+      - Notes (contextual info)
+    - Ignores headings like i), ii), iii) but uses them in Notes
+
+- `call_ollama(prompt)`
+  - Generic function to send prompts to Ollama LLM
+  - Returns raw LLM response
+
+- `process_table()`
+  - Opens PDF file(s) using `pdfplumber`
+  - Extracts tables page by page
+  - Skips empty or invalid rows
+  - Combines tables from all pages
+  - Cleans data:
+    - Applies left-fill rule
+    - Drops empty columns
+    - Merges continuation rows
+  - Handles two main cases:
+    - **Unit and Quantity empty:** calls `extract_boq()` to generate BoQ items
+    - **Unit and Quantity present:** generates short contextual Notes via Ollama
+  - Maintains context memory across rows for better notes
+  - Returns a final structured DataFrame:
+    - Item No.
+    - Description
+    - Unit
+    - Quantity
+    - Notes
