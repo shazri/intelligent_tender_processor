@@ -6,7 +6,7 @@ conda version 24.11.3
 2. conda activate working_folder
 3. pip install -r requirements.txt
 4. python text_and_image_preprocessing.py
- - sub-run ### text_ingest.py , ### image_read.py , ### image_ingest.py
+ - sub-run [text_ingest.py](#text_ingestpy)
  - generate folder <images_rep> and its contents
  - generate vector_db_all.pkl
 5. Place glove.6B.50d.txt from
