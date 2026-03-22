@@ -72,6 +72,22 @@ Columns:
 - in video at minute 12:06
 ![Diagram](readme_img/summary_req.png)
 
+### Bill of Quantities
+- in video at minute 13:15
+- Structured table capturing all tender items with quantities
+- Includes technical description, unit, and quantity for each item
+- Notes column provides additional context such as section references, breakdowns, or inferred purpose
+
+Columns:
+- Item No.    : Serial number or identifier for the item
+- Description : Exact description of the item as per tender
+- Unit        : Standardized unit of measurement (e.g., nos., m, kg)
+- Quantity    : Numeric quantity of the item
+- Notes       : Additional context or clarifications
+               - May include section references (i), ii), iii))
+               - Can contain inferred purpose or short explanations
+![Diagram](readme_img/boq.png)
+
 ## Discussion
 
 ### The intent junction uses ML e.g. Logistic Regression, not LLM
