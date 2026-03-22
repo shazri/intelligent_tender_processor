@@ -1,3 +1,8 @@
+#-----------------------------------------------------------
+# Toola and Interfaces that being used to interact with Ollama
+# shazri 2026
+#-----------------------------------------------------------
+
 import requests
 
 import vector_db_lib

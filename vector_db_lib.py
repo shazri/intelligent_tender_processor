@@ -1,3 +1,8 @@
+# -----------------------------------------------------------------------------------
+# This code is to store, update and retrieve vector that representes chunks from description
+# shazri 2026
+# -----------------------------------------------------------------------------------
+
 import pickle
 import os
 

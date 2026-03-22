@@ -1,3 +1,7 @@
+# -----------------------------------------------------------
+# from inferred description (image_read.py) to infer what is the requirement
+# shazri 2026
+# -----------------------------------------------------------
 import json
 
 import vector_db_lib

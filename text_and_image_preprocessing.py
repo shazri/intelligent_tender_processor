@@ -1,3 +1,9 @@
+# ---------------------------------------------------------------------
+# To extract, chunk, attribute (including image to description), call vectorization and store  
+# This makes it easier as it runs as a simple workflow
+# shazri 2026
+# ---------------------------------------------------------------------
+
 import subprocess
 
 scripts = [

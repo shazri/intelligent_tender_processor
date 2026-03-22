@@ -1,11 +1,13 @@
-"""
-    PyPDFLoader : to load pdfs
-    CharacterTextSplitter : to split the documents into chunks
-
-    vector_db_lib : to store chunks in vectorized version
-
-    re : reqular expression, to get target content from a given string
-"""
+# -----------------------------------------------------------------
+#    PyPDFLoader : to load pdfs
+#    CharacterTextSplitter : to split the documents into chunks
+#
+#    vector_db_lib : to store chunks in vectorized version
+#
+#    re : reqular expression, to get target content from a given string
+#
+#    shazri 2026
+# -----------------------------------------------------------------
 import numpy as np
 import json
 

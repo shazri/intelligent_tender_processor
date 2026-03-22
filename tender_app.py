@@ -1,3 +1,9 @@
+#-------------------------------------------------------------------------------
+# Streamlit app, infer intent 1) REQUIREMENTS 2) BOQ 3) GENERAL
+# infer what is a requirement using OLLAMA
+# extract from source using sentence transformer
+# shazri 2026
+#------------------------------------------------------------------------------
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -45,7 +51,7 @@ def predict_intent(query):
 # Streamlit config
 # -----------------------------
 st.set_page_config(page_title="Test App", layout="wide")
-st.title("_ Test App")
+st.title("mvp tender intelligence")
 
 # -----------------------------
 # Chat history

@@ -1,3 +1,8 @@
+# ------------------------------------------------
+# Generate compilation of Bill of QUantities
+# shazri 2026
+# ------------------------------------------------
+
 import pandas as pd
 import numpy as np
 import pdfplumber
