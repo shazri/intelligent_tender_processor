@@ -250,10 +250,10 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
 
 - Load Configuration
   - Reads paths from `config.json`:
-    - `embedding_path` → word embeddings file
-    - `docs_path` → folder containing PDFs
-    - `vector_pickle_all` → saved vector database
-    - `image_analysis` → JSON file with image analysis results
+    - `embedding_path` , word embeddings file
+    - `docs_path` , folder containing PDFs
+    - `vector_pickle_all` , saved vector database
+    - `image_analysis` , JSON file with image analysis results
   - Prints configuration paths
 
 - Load Image Records
@@ -263,7 +263,7 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
 - Create Embedding Index
   - Reads embeddings file line by line
   - Creates dictionary:
-    - `word` → vector (`numpy` array)
+    - `word` , vector (`numpy` array)
   - Used for vectorization of text/image descriptions
 
 - Load Existing Vector Database
@@ -295,9 +295,9 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
 
 - Configuration
   - Loads paths from `config.json`:
-    - `embedding_path` → word embeddings file
-    - `docs_path` → folder containing PDFs
-    - `vector_pickle_all` → saved vector database file
+    - `embedding_path` , word embeddings file
+    - `docs_path` , folder containing PDFs
+    - `vector_pickle_all` , saved vector database file
 
 - LLM Interaction
   - `ask_ollama(prompt)`
@@ -456,12 +456,12 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
 
 - Record Structure
   - Each stored record contains:
-    - `vector` → embedding vector
-    - `text` → original text
-    - `file` → source file
-    - `page` → page number
-    - `type` → "text" or "image"
-    - `image` → image path (if applicable)
+    - `vector` , embedding vector
+    - `text` , original text
+    - `file` , source file
+    - `page` , page number
+    - `type` , "text" or "image"
+    - `image` , image path (if applicable)
 
 - Duplicate Prevention
   - Uses `existing_keys` set to track processed entries
@@ -469,3 +469,27 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
 
 - Output
   - Returns updated vector database with newly added records
+ 
+### Configuration File (`config.json`)
+
+The `config.json` file contains all paths and filenames used by the tender processing pipeline. Each field is described below:
+
+- `embedding_path` : Path to the word embeddings file.  
+  Example: `"vectorlib//glove//glove.6B.50d.txt"`  
+  Used to convert words into vector embeddings for similarity and search.
+
+- `docs_path` : Folder containing all PDF tender documents.  
+  Example: `"docs"`  
+  The pipeline recursively scans this folder to load and process documents.
+
+- `vector_pickle_all` : Filename for the saved vector database.  
+  Example: `"vector_db_all.pkl"`  
+  Stores all processed text and image embeddings to avoid reprocessing.
+
+- `image_analysis` : JSON file containing results of image processing.  
+  Example: `"image_analysis.json"`  
+  Used when adding image-based requirements to the vector database.
+
+- `images_rep` : Folder to save processed images (e.g., extracted from PDFs).  
+  Example: `"images_rep"`  
+  Ensures all images are saved consistently for analysis.
