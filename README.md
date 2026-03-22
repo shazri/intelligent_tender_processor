@@ -34,7 +34,7 @@ Runtime video: https://drive.google.com/file/d/14zRleh_R14k8htLZlC2i1o3r0rObe-Rl
      - e.g. "Provide the Bill of Quantities" derives intent "BOQ"
      - e.g. "Tell me generally about tender" derives intent "GENERAL"
 
-### Tender Requirement List (Text-Based Portion)
+### Output 1) Tender Requirement List (Text-Based Portion)
 - in video at minute 11:11
 - Structured list of tender obligations extracted from PDF sources
 - Ensures exact phrases are captured for compliance and analysis
@@ -51,7 +51,7 @@ Columns:
 - compliance         : YES, NO or UNKNOWN
 ![Diagram](readme_img/req_text.png)
 
-### Tender Requirement List (Image-Based Portion)
+### Output 2)  Tender Requirement List (Image-Based Portion)
 - in video at minute 11:30
 - Structured list of tender obligations extracted from images in PDF files
 - Captures requirements that are present in diagrams, tables, or scanned images
@@ -69,11 +69,11 @@ Columns:
 - compliance        : YES, NO or UNKNOWN
 ![Diagram](readme_img/req_image.png)
 
-### Summary of Results
+### Output 3) Summary of Results
 - in video at minute 12:06
 ![Diagram](readme_img/summary_req.png)
 
-### Bill of Quantities
+### Output 4) Bill of Quantities
 - in video at minute 13:15
 - Structured table capturing all tender items with quantities
 - Includes technical description, unit, and quantity for each item
