@@ -450,7 +450,7 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
 
 - Embedding Generation
   - Uses preloaded embedding index:
-    - `word → vector`
+    - `word to vector`
   - Generates vector by averaging token embeddings
   - Handles variable input schemas via configurable field names
 
