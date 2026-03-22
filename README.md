@@ -12,6 +12,7 @@
 3. run command `pip install -r requirements.txt`
 4. run command `python text_and_image_preprocessing.py`
     - sub-run [text_ingest.py](#text_ingestpy) , [text_ingest.py](#text_ingestpy) , [image_read.py](#image_readpy)
+      - `image_analysis.json` will be generated as an intermediary file, i.e. image to text description 
     - generates folder <images_rep> and its contents
     - generates `vector_db_all.pkl`
 5. do action, place glove.6B.50d.txt from
