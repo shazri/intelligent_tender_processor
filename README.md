@@ -46,6 +46,7 @@ Columns:
 ![Diagram](readme_img/req_text.png)
 
 ### Tender Requirement List (Image-Based Portion)
+- in video at minute 11:30
 - Structured list of tender obligations extracted from images in PDF files
 - Captures requirements that are present in diagrams, tables, or scanned images
 - Stores exact phrases, page info, and image references for compliance and analysis
@@ -61,6 +62,10 @@ Columns:
 - classification    : MANDATORY or OPTIONAL
 - compliance        : YES, NO or UNKNOWN
 ![Diagram](readme_img/req_image.png)
+
+### Summary of Results
+- in video at minute 12:06
+![Diagram](readme_img/summary_req.png)
 
 ## Discussion
 
