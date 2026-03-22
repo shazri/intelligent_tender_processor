@@ -23,6 +23,11 @@ to <working_folder>\\vectorlib\\glove\\
 
 Runtime video: https://drive.google.com/file/d/14zRleh_R14k8htLZlC2i1o3r0rObe-Rl/view?usp=drive_link
 
+2. Input in chatbox:
+     - e.g. "What are the requirements of the tender?" derives intent "REQUIREMENTS"
+     - e.g. "Provide the Bill of Quantities" derives intent "BOQ"
+     - e.g. "Tell me generally about tender" derives intent "GENERAL"
+
 ### Tender Requirement List (Text-Based Portion)
 - in video at minute 11:11
 - Structured list of tender obligations extracted from PDF sources
