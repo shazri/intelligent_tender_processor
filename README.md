@@ -2,16 +2,19 @@
 
 conda version 24.11.3
 
-1. conda create -n working_folder python=3.11
-2. conda activate working_folder
-3. pip install -r requirements.txt
-4. python text_and_image_preprocessing.py
+1. run command `conda create -n working_folder python=3.11`
+2. run command `conda activate working_folder`
+3. run command `pip install -r requirements.txt`
+4. run command `python text_and_image_preprocessing.py`
  - sub-run [text_ingest.py](#text_ingestpy) , [text_ingest.py](#text_ingestpy) , [image_read.py](#image_readpy)
- - generate folder <images_rep> and its contents
- - generate vector_db_all.pkl
-5. Place glove.6B.50d.txt from
+ - generates folder <images_rep> and its contents
+ - generates `vector_db_all.pkl`
+5. do action, place glove.6B.50d.txt from
 https://drive.google.com/drive/folders/1b1mUxkawvycyXfwh7ze3DAEyEBZ2AIkD?usp=drive_link
 to <working_folder>\\vectorlib\\glove\\
+6. run command `python intent_model.py`
+ - generates `intent_vectorizer.pkl`
+ - generates `intent_clf.pkl`
 
 
 
