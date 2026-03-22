@@ -254,9 +254,9 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
   - Replaces missing values with empty strings
   - Returns a final, clean summary table
  
-  ### table_process.py
+ ### table_process.py
 
-  - Table Process Library
+- Table Process Library
   - Provides functions to extract, clean, and process tables from engineering tender PDFs
   - Converts raw tables into structured Pandas DataFrames for BoQ analysis
 
