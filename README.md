@@ -52,7 +52,7 @@ Columns:
 - Stores exact phrases, page info, and image references for compliance and analysis
 
 Columns:
-- description       : main obligation or text extracted from image, the source that the requirement derived from are from first: `llama3.2-vision`  and fallback: `qwen2.5vl:7b`
+- description       : main obligation or text extracted from image, image to text descriptions are derived from firstly: `llama3.2-vision`  and fallback: `qwen2.5vl:7b`
 - excerpt           : exact supporting text from the source image
 - category          : type of requirement (DOCUMENTATION, QUALITY_STANDARDS, TECHNICAL_SPECS, TIMELINES)
 - pdf               : PDF filename containing the image
