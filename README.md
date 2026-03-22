@@ -67,3 +67,64 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
   - Uses embedding index and metadata fields (`file`, `page`, `text`, `image`)
 - Save Updated Database
   - Saves the updated vector database back to the pickle file
+ 
+  ### image_read.py
+
+  - Code Functionalities
+  - Reads config paths
+    - PDF folder
+    - Image output folder
+    - JSON output file
+  - Walks through all folders and PDFs
+    - Uses `os.walk`
+    - Filters `.pdf` files
+  - Extracts images from PDFs
+    - Uses `fitz` (PyMuPDF)
+    - Loops page by page
+    - Extracts all images
+  - Converts and saves images
+    - Ensures RGB format
+    - Saves as `.png`
+    - Names include file, page, image index
+  - Filters images
+    - Removes small images (<300px)
+    - Avoids noise like icons/logos
+  - Resizes images
+    - Max 512px
+    - Improves speed and reduces load
+  - Sends image to Ollama
+    - Base64 encoding
+    - Uses `/api/chat`
+    - Prompt focuses on:
+      - Requirement
+      - Equipment
+      - Process
+      - Safety
+  - Uses model fallback
+    - First: `llama3.2-vision`
+    - Fallback: `qwen2.5vl:7b`
+  - Controls model output
+    - `num_predict = 300`
+    - `temperature = 0.3`
+    - `repeat_penalty = 1.2`
+  - Streams response
+    - Prints tokens live
+    - No waiting blindly
+  - Handles repetition
+    - Detects looping text
+    - Stops early if repeating
+    - Cleans duplicate sentences
+  - Error handling
+    - Catches request failures
+    - Tries next model
+    - Returns `"ERROR"` if all fail
+  - Stores results
+    - List of dictionaries
+    - Fields:
+      - `pdf`
+      - `page`
+      - `image`
+      - `description`
+  - Saves output
+    - Writes to JSON file
+    - Formatted with `indent`
