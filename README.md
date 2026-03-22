@@ -4,9 +4,9 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
 
 - Creates a pipeline runner called text_and_image_preprocessing.py
 - Defines a list of scripts to execute:
--- text_ingest.py
--- image_read.py
--- image_ingest.py
+  - text_ingest.py
+  - image_read.py
+  - image_ingest.py
 
 
 Uses subprocess.run() to execute each script
