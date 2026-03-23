@@ -1,4 +1,35 @@
+## Table of Contents
 
+- [Installation](#installation)
+  - [Pre-installation](#pre-installation)
+  - [Main Installation Portion](#main-installation-portion)
+
+- [Runtime](#runtime)
+  - [Output 1) Tender Requirement List (Text-Based Portion)](#output-1-tender-requirement-list-text-based-portion)
+  - [Output 2) Tender Requirement List (Image-Based Portion)](#output-2--tender-requirement-list-image-based-portion)
+  - [Output 3) Summary of Results](#output-3-summary-of-results)
+  - [Output 4) Bill of Quantities](#output-4-bill-of-quantities)
+
+- [Architectural Design](#architectural-design)
+
+- [Discussion](#discussion)
+  - [1) The intent junction uses ML e.g. Logistic Regression, not LLM](#1-the-intent-junction-uses-ml-eg-logistic-regression-not-llm)
+  - [2) Why Use SentenceTransformer Alongside Ollama for Requirement Extraction](#2-why-use-sentencetransformer-alongside-ollama-for-requirement-extraction)
+  - [3) Why Use Ollama (Local LLM) Instead of External APIs](#3-why-use-ollama-local-llm-instead-of-external-apis)
+  - [4) Future Improvements](#4-future-improvements)
+
+- [Codes](#codes)
+  - [text_and_image_preprocessing.py](#text_and_image_preprocessingpy)
+  - [text_ingest.py](#text_ingestpy)
+  - [image_read.py](#image_readpy)
+  - [image_ingest.py](#image_ingestpy)
+  - [llm_tools.py](#llm_toolspy)
+  - [collate_and_summarize.py](#collate_and_summarizepy)
+  - [table_process.py](#table_processpy)
+  - [vector_db_lib.py](#vector_db_libpy)
+  - [intent_model.py](#intent_modelpy)
+
+- [Configuration File (config.json)](#configuration-file-configjson)
 
 ## Installation
 
