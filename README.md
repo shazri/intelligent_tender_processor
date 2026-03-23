@@ -523,6 +523,58 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
 
 - Output
   - Returns updated vector database with newly added records
+
+### intent_model.py
+
+- Intent Classification Model
+  - Builds a lightweight ML model to classify user queries into:
+    - REQUIREMENTS
+    - BOQ
+    - GENERAL
+
+- Purpose
+  - Acts as the first decision layer in the system
+  - Routes user queries to the correct processing pipeline
+  - Avoids unnecessary LLM calls for simple intent detection
+
+- Training Data
+  - Manually defined dataset of query–intent pairs
+  - Covers:
+    - Requirement-related queries (technical specs, documents, timelines)
+    - BOQ-related queries (quantities, pricing, cost breakdown)
+    - General tender queries (overview, process, stakeholders)
+
+- Text Vectorization
+  - Uses `TfidfVectorizer`
+    - Lowercases all text
+    - Uses unigram + bigram (`ngram_range=(1,2)`)
+  - Converts queries into numerical feature vectors
+
+- Model Training
+  - Uses `LogisticRegression`
+  - `max_iter=500` to ensure convergence
+  - Learns patterns between query text and intent labels
+
+- Prediction Function
+  - `predict_intent(query)`
+    - Transforms input query using trained vectorizer
+    - Returns predicted intent label
+
+- Testing
+  - Includes sample test queries
+  - Prints predicted intent for quick validation
+
+- Model Persistence
+  - Saves trained components using `joblib`:
+    - `intent_clf.pkl` → trained classifier
+    - `intent_vectorizer.pkl` → TF-IDF vectorizer
+  - Enables reuse during runtime without retraining
+
+- Key Design Choice
+  - Uses ML instead of LLM:
+    - Deterministic and consistent output
+    - No hallucination risk
+    - Faster and lightweight for real-time intent routing
  
 ### Configuration File (`config.json`)
 
