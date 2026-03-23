@@ -142,6 +142,29 @@ Ollama is used to run Large Language Models locally, providing better control, s
   - Choose and switch models (e.g., LLaMA, Qwen)  
   - Tune parameters (temperature, tokens, etc.) as needed  
 
+### 4) Future Improvements
+
+- More robust intent detection  
+  - Improve training dataset for better classification accuracy  
+  - Explore advanced models beyond Logistic Regression  
+  - Handle edge cases and ambiguous queries more effectively  
+
+- Automated ingestion (daemon-based)  
+  - Implement a background service to monitor document folders  
+  - Automatically trigger ingestion when new files are added  
+  - Reduces manual intervention and keeps the system up-to-date  
+
+- File change detection using hashing  
+  - Generate hashes for each document to detect modifications  
+  - If a file changes, remove old vectors and reprocess only that file  
+  - Improves efficiency by avoiding full re-ingestion  
+
+- Load testing and scalability  
+  - Perform load testing to evaluate system performance under stress  
+  - Identify bottlenecks in vector search and LLM inference  
+  - Explore horizontal scaling strategies (e.g., multiple workers, distributed vector DB)  
+  - Ensure consistent user experience as usage grows  
+
 ## Codes
 
 ### text_and_image_preprocessing.py
