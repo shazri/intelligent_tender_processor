@@ -91,6 +91,9 @@ Columns:
                - Can contain inferred purpose or short explanations
 ![Diagram](readme_img/boq.png)
 
+## Architectural Design
+![Diagram](readme_img/arch.png)
+
 ## Discussion
 
 ### 1) The intent junction uses ML e.g. Logistic Regression, not LLM
