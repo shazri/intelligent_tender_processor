@@ -1,0 +1,16 @@
+Item No.,Description,Unit,Quantity,Notes
+1,"500 MVA, 400/220kV ICT",Nos.,2,i) Augmentation of Kallam PS by 2x500 MVA
+1,400 kV ICT bays,Nos.,2,i) Augmentation of Kallam PS by 2x500 MVA
+1,220 kV ICT bays,Nos.,2,i) Augmentation of Kallam PS by 2x500 MVA
+1,220 kV line bays,Nos.,3,ii) 3 nos. 220 kV line bays for RE interconnection
+1,"125 MVAr, 420 kV Bus reactor",No.,1,iii) 1x125 MVAr bus reactor (2nd) at Kallam PS
+1,Bus reactor bay,No.,1,iii) 1x125 MVAr bus reactor (2nd) at Kallam PS
+1A,"Ex works supply of all equipments and
+materials including Mandatory Spare Parts and Condition Monitoring
+Instruments",LSTK,1,"""Comprehensive ex-works supply with spares included."""
+1B,"All services i.e., inland transportation for
+delivery at site, In-transit insurance,
+unloading, handling at site, installation,
+Testing and Commissioning including
+performance testing in respect of all the
+equipments supplied Total (1A+1B)",LSTK,1,"""On-site services included: delivery to site"""
