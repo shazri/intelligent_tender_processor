@@ -115,6 +115,30 @@ This hybrid approach ensures:
 - Ollama provides semantic understanding and identifies candidate requirements.
 - SentenceTransformer precisely maps the LLM output to the source document, reducing hallucination and improving fidelity.
 
+### 3) Why Use Ollama (Local LLM) Instead of External APIs
+
+Ollama is used to run Large Language Models locally, providing better control, security, and cost efficiency compared to external API-based solutions.
+
+- No external API calls  
+  - All data stays within the local environment  
+  - Sensitive tender documents are not sent to third-party services  
+
+- Improved data privacy and security  
+  - Suitable for confidential engineering and financial documents  
+  - Reduces risk of data leakage  
+
+- No usage cost per request  
+  - Eliminates API token costs  
+  - Scales without additional expense  
+
+- Lower latency and offline capability  
+  - Faster response times since no network call is required  
+  - Can run fully offline once models are downloaded  
+
+- Full control over models  
+  - Choose and switch models (e.g., LLaMA, Qwen)  
+  - Tune parameters (temperature, tokens, etc.) as needed  
+
 ## Codes
 
 ### text_and_image_preprocessing.py
