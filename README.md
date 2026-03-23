@@ -578,7 +578,7 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
 - Text Vectorization
   - Uses `TfidfVectorizer`
     - Lowercases all text
-    - Uses unigram + bigram (`ngram_range=(1,2)`)
+    - Uses unigram and bigram (`ngram_range=(1,2)`)
   - Converts queries into numerical feature vectors
 
 - Model Training
@@ -597,8 +597,8 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
 
 - Model Persistence
   - Saves trained components using `joblib`:
-    - `intent_clf.pkl` → trained classifier
-    - `intent_vectorizer.pkl` → TF-IDF vectorizer
+    - `intent_clf.pkl` , trained classifier
+    - `intent_vectorizer.pkl` , TF-IDF vectorizer
   - Enables reuse during runtime without retraining
 
 - Key Design Choice
