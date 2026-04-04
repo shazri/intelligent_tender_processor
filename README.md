@@ -464,8 +464,8 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
 
 - `apply_left_fill_rule(df)`
   - For each column in a DataFrame:
-    - if   (column name is not empty) and (all values are empty)
-      then (Fills column with values from the immediate left column) 
+    - `if`   (column name is not empty) `and` (all values are empty)
+      `then` (Fills column with values from the immediate left column) 
 
 - `extract_boq(text)`
   - Sends a text snippet to Ollama LLM
@@ -491,7 +491,10 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
   - Cleans data:
     - Applies left-fill rule
     - Drops empty columns
-    - Merges continuation rows
+    - Merges continuation rows ,
+      - `if ` column `S.` is empty `and`
+      - `if ` column `Unit` is empty `and`
+      - `if ` column `Quantity` is empty
   - Handles two main cases:
     - **Unit and Quantity empty:** calls `extract_boq()` to generate BoQ items
     - **Unit and Quantity present:** generates short contextual Notes via Ollama
