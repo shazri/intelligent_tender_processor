@@ -464,9 +464,8 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
 
 - `apply_left_fill_rule(df)`
   - For each column in a DataFrame:
-    - If column name is not empty
-    - And all values are empty
-    - Fills column with values from the immediate left column
+    - if   (column name is not empty) and (all values are empty)
+      then (Fills column with values from the immediate left column) 
 
 - `extract_boq(text)`
   - Sends a text snippet to Ollama LLM
