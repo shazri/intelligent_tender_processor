@@ -219,6 +219,9 @@ content:
             collate_answer = collate_answer.replace("Here's the extracted requirement:", "")
             collate_answer = collate_answer.replace("Here is the extracted requirement:", "")
             collate_answer = collate_answer.replace("Here are the extracted requirement:", "")
+            # 4/4/2026 HERE'S THE EXTRACTED INFORMATION:
+            collate_answer = collate_answer.replace("Here's the extracted information:", "")
+            
             
             # Optional: also strip leftover spaces/newlines
             collate_answer = collate_answer.strip()
