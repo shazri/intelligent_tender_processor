@@ -489,7 +489,7 @@ It automates a step-by-step preprocessing pipeline for text and images ingestion
   - Skips empty or invalid rows
   - Combines tables from all pages
   - Cleans data:
-    - Applies left-fill rule
+    - Applies left-fill rule, `apply_left_fill_rule(df)`
     - Drops empty columns
     - Merges continuation rows ,
       - `if ` column `S.` is empty `and`
